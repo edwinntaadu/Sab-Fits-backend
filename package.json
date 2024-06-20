@@ -1,0 +1,26 @@
+{
+  "name": "keystone-app",
+  "version": "1.0.2",
+  "private": true,
+  "scripts": {
+    "dev": "keystone dev",
+    "start": "keystone start",
+    "build": "keystone build",
+    "postinstall": "keystone build --no-ui --frozen"
+  },
+  "dependencies": {
+    "@azure/msal-node": "^2.9.2",
+    "@keystone-6/auth": "^7.0.0",
+    "@keystone-6/cloudinary": "^8.0.0",
+    "@keystone-6/core": "^5.0.0",
+    "@keystone-6/fields-document": "^7.0.0",
+    "cloudinary": "^2.2.0",
+    "glob": "^10.4.2",
+    "inflight": "^1.0.6",
+    "mongoose": "^8.4.3",
+    "q": "^1.5.1",
+    "rimraf": "^5.0.7",
+    "typescript": "^4.9.5",
+    "uuid": "^10.0.0"
+  }
+}
