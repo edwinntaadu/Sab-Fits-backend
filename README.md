@@ -1,52 +1,56 @@
-# Keystone Project Starter
+# Sab Fits
 
-Welcome to Keystone!
+## Project Description
 
-Run
+"Sab Fits" is a full-stack online clothing store complete with real credit checkout. Users can search, sell, add to cart, and checkout their favorite items.
 
-```
-yarn dev
-```
+## Features
 
-To view the config for your new app, look at [./keystone.ts](./keystone.ts)
+- **User Management**: Authentication and user role management.
+- **Product Management**: Add, update, delete, and view products.
+- **Order Processing**: Complete order lifecycle from cart to checkout.
+- **Payment Integration**: Real credit card payments via Stripe.
+- **Email Notifications**: Automated email notifications for various actions.
+- **GraphQL API**: Data fetching and mutations using Apollo Client.
+- **Admin Interface**: Manage application data through a Keystone.js admin interface.
+- **Responsive Design**: Fully responsive design using Styled Components.
 
-This project starter is designed to give you a sense of the power Keystone can offer you, and show off some of its main features. It's also a pretty simple setup if you want to build out from it.
+## Models
 
-We recommend you use this alongside our [getting started walkthrough](https://keystonejs.com/docs/walkthroughs/getting-started-with-create-keystone-app) which will walk you through what you get as part of this starter.
+The application includes six main models:
 
-If you want an overview of all the features Keystone offers, check out our [features](https://keystonejs.com/why-keystone#features) page.
+- **Users**
+- **Items**
+- **Orders**
+- **CartItems**
+- **OrderItems**
+- **Roles**
 
-## Some Quick Notes On Getting Started
+## Technologies Used
 
-### Changing the database
+- **Frontend**:
 
-We've set you up with an [SQLite database](https://keystonejs.com/docs/apis/config#sqlite) for ease-of-use. If you're wanting to use PostgreSQL, you can!
+  - React.js: For building the user interface.
+  - Next.js: For server-side rendering, routing, and tooling.
+  - Styled Components: For styling components.
+  - Context API: For managing local state.
+  - Apollo Client: For GraphQL data management, including mutations and queries.
+  - Jest & React Testing Library: For testing.
 
-Just change the `db` property on line 16 of the Keystone file [./keystone.ts](./keystone.ts) to
+- **Backend**:
+  - Keystone.js: Node.js-based GraphQL server and headless CMS.
+  - MongoDB or Prisma: For database management.
+  - Stripe: For payment processing.
+  - Node.js: For server-side logic.
+  - GraphQL: For API queries and mutations.
 
-```typescript
-db: {
-    provider: 'postgresql',
-    url: process.env.DATABASE_URL || 'DATABASE_URL_TO_REPLACE',
-}
-```
+## Setup Instructions
 
-And provide your database url from PostgreSQL.
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Set up environment variables
+4. Start the development server with `npm run dev`
 
-For more on database configuration, check out or [DB API Docs](https://keystonejs.com/docs/apis/config#db)
+## Contributions
 
-### Auth
-
-We've put auth into its own file to make this humble starter easier to navigate. To explore it without auth turned on, comment out the `isAccessAllowed` on line 21 of the Keystone file [./keystone.ts](./keystone.ts).
-
-For more on auth, check out our [Authentication API Docs](https://keystonejs.com/docs/apis/auth#authentication-api)
-
-### Adding a frontend
-
-As a Headless CMS, Keystone can be used with any frontend that uses GraphQL. It provides a GraphQL endpoint you can write queries against at `/api/graphql` (by default [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql)). At Thinkmill, we tend to use [Next.js](https://nextjs.org/) and [Apollo GraphQL](https://www.apollographql.com/docs/react/get-started/) as our frontend and way to write queries, but if you have your own favourite, feel free to use it.
-
-A walkthrough on how to do this is forthcoming, but in the meantime our [todo example](https://github.com/keystonejs/keystone-react-todo-demo) shows a Keystone set up with a frontend. For a more full example, you can also look at an example app we built for [Prisma Day 2021](https://github.com/keystonejs/prisma-day-2021-workshop)
-
-### Embedding Keystone in a Next.js frontend
-
-While Keystone works as a standalone app, you can embed your Keystone app into a [Next.js](https://nextjs.org/) app. This is quite a different setup to the starter, and we recommend checking out our walkthrough for that [here](https://keystonejs.com/docs/walkthroughs/embedded-mode-with-sqlite-nextjs#how-to-embed-keystone-sq-lite-in-a-next-js-app).
+Contributions are welcome. Please open an issue or submit a pull request.
