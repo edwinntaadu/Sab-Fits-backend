@@ -39,10 +39,11 @@ The application includes six main models:
 
 - **Backend**:
   - Keystone.js: Node.js-based GraphQL server and headless CMS.
-  - MongoDB or Prisma: For database management.
+  - Prisma: For database management.
   - Stripe: For payment processing.
   - Node.js: For server-side logic.
   - GraphQL: For API queries and mutations.
+  - TypeScript: Ensuring type safety across the backend.
 
 ## Setup Instructions
 
