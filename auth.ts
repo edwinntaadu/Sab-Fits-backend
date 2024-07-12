@@ -2,6 +2,7 @@ import 'dotenv/config';
 import { randomBytes } from 'crypto';
 import { createAuth } from '@keystone-6/auth';
 import { statelessSessions } from '@keystone-6/core/session';
+import { sendPasswordResetEmail } from './lib/mail';
 
 
 let sessionSecret = process.env.SESSION_SECRET;
@@ -23,7 +24,8 @@ const { withAuth } = createAuth({
   },
   passwordResetLink: {
     async sendToken(args) {
-      console.log(args);
+      // send the email
+      await sendPasswordResetEmail(args.token, args.identity);
     }
   }
 });
