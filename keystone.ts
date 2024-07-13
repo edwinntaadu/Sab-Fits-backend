@@ -1,7 +1,10 @@
 import 'dotenv/config';
 import { config } from '@keystone-6/core';
-import { lists } from './schema';
 import { withAuth, session } from './auth';
+import { User } from './schemas/User';
+import { Product } from './schemas/Product';
+import { ProductImage } from './schemas/ProductImage';
+import { CartItem } from './schemas/CartItem';
 
 if (!process.env.DATABASE_URL) {
   throw new Error('DATABASE_URL environment variable is not set');
@@ -23,7 +26,13 @@ export default withAuth(
         credentials: true,
       },
     },
-    lists,
+    lists: {
+      // Schema items go here
+      User,
+      Product,
+      ProductImage,
+      CartItem,
+    },
     session,
     ui: {
       isAccessAllowed: (context) => !!context.session?.data,
